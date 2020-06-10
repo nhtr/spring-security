@@ -40,7 +40,7 @@ public class JwtProvider {
 	@PostConstruct
 	public void init() {
 		try {
-			keyStore = KeyStore.getInstance("JKS");
+			keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
 			InputStream resourceAsStream = getClass().getResourceAsStream("/springlsso.jks");
 			keyStore.load(resourceAsStream, "truong00".toCharArray());
 		} catch (KeyStoreException | CertificateException | NoSuchAlgorithmException | IOException e) {
