@@ -29,11 +29,6 @@ public class AuthController {
 	private final AuthService authService;
     private final RefreshTokenService refreshTokenService;
 	
-	@GetMapping("ping/{name}")
-	public ResponseEntity<String> ping(@PathVariable String name) {
-		return new ResponseEntity<>("Hello " + name, OK);
-	}
-	
     @PostMapping("/signup")
     public ResponseEntity<String> signup(@RequestBody RegisterRequest registerRequest) {
         authService.signup(registerRequest);
