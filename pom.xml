@@ -11,5 +11,6 @@
 
 	<modules>
 		<module>auth-jwt</module>
+		<module>lsso-authorization-server</module>
 	</modules>
 </project>
