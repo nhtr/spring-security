@@ -17,9 +17,11 @@ keycloak:
   custom:
     server:
       contextPath: "/auth"
+
+    infinispan:
+      configLocation: "classpath:infinispan-cluster.xml"
+
     adminUser:
       username: admin
       password: admin
-    migration:
-      importProvider: singleFile
-      importLocation: lsso-realm.json
+    importLocation: lsso-realm.json

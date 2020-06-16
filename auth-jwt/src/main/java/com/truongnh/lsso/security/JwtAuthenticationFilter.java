@@ -32,7 +32,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 		// check validate jwt
 		if (StringUtils.hasText(jwt) && jwtProvider.validateToken(jwt)) {
 			String username = jwtProvider.getUsernameFromJwt(jwt);
-			// TODO: call database many times, Do what?
+			// TODO: call database many times, Do what? Using redis save user logged as data cache.
 			UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 			UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails,
 					null, userDetails.getAuthorities());
