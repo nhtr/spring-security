@@ -1,0 +1,30 @@
+spring:
+   security:
+      oauth2:
+         client:
+            registration:
+               custom:
+                  client-id: login-app
+                  client-secret: b5890d06-e920-49cd-b758-9bac5b171ac2
+                  scope: read,write
+                  authorization-grant-type: authorization_code
+                  redirect-uri: http://localhost:8097/lsso-client/login/oauth2/code/custom
+            provider:
+               custom:
+                  authorization-uri: http://localhost:8095/auth/realms/lsso/protocol/openid-connect/auth
+                  token-uri: http://localhost:8095/auth/realms/lsso/protocol/openid-connect/token
+                  user-info-uri: http://localhost:8095/auth/realms/lsso/protocol/openid-connect/userinfo
+                  user-name-attribute: preferred_username
+   thymeleaf:
+      cache: false
+server:
+   port: 8097
+   servlet:
+      context-path: /lsso-client
+logging:
+   level:
+      org.springframework: INFO
+resourceserver:
+   api:
+      project:
+         url: http://localhost:8096/lsso-resource-server/api/projects/

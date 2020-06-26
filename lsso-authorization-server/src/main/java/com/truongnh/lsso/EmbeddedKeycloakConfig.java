@@ -93,15 +93,7 @@ class EmbeddedKeycloakConfig {
 
     @Bean
     ServletRegistrationBean<HttpServlet30Dispatcher> keycloakJaxRsApplication() {
-
-        //FIXME: hack to propagate Spring Boot Properties to Keycloak Application
-        // EmbeddedKeycloakApplication.keycloakProperties = keycloakProperties;
-
-        //FIXME: hack to propagate Spring Boot Properties to Keycloak Application
         EmbeddedKeycloakApplication.customProperties = customProperties;
-
-        //FIXME: hack to propagate Spring Boot ConfigProvider to Keycloak Application
-        // EmbeddedKeycloakApplication.configProvider = configProvider;
 
         ServletRegistrationBean<HttpServlet30Dispatcher> servlet = new ServletRegistrationBean<>(new HttpServlet30Dispatcher());
         servlet.addInitParameter("javax.ws.rs.Application", EmbeddedKeycloakApplication.class.getName());
