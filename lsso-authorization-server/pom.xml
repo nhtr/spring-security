@@ -23,7 +23,6 @@
 		<keycloak.version>9.0.3</keycloak.version>
 		<resteasy.version>3.11.2.Final</resteasy.version>
 		<infinispan.version>9.4.19.Final</infinispan.version>
-		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
