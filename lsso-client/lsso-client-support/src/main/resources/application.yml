@@ -9,6 +9,9 @@ spring:
                   scope: read,write
                   authorization-grant-type: authorization_code
                   redirect-uri: http://localhost:8097/lsso-client/login/oauth2/code/custom
+               github:
+                  client-id: d45d36953974b2ab955b
+                  client-secret: c316973d651ad01ae8e0bf4ff307f0d64539f628
             provider:
                custom:
                   authorization-uri: http://localhost:8095/auth/realms/lsso/protocol/openid-connect/auth

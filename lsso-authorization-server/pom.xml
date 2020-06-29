@@ -14,6 +14,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>lsso-authorization-server</name>
 	<description>Spring Boot Embedded Keycloak Server</description>
+	<packaging>jar</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -189,6 +190,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>auth-server</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
