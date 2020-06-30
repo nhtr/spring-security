@@ -17,6 +17,9 @@ public class KeycloakCustomProperties {
     Infinispan infinispan = new Infinispan();
     
     String importLocation = "lsso-realm.json";
+    
+    boolean createAdminUser = true;
+    boolean createRealm = true;
 
     @Getter
     @Setter

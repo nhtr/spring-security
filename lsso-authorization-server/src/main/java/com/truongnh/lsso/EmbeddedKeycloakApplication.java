@@ -37,8 +37,12 @@ public class EmbeddedKeycloakApplication extends KeycloakApplication {
 	public EmbeddedKeycloakApplication(@Context ServletContext context) {
 
 		Resteasy.pushContext(ServletContext.class, augmentToRedirectContextPath(context));
-		tryCreateMasterRealmAdminUser();
-		importLssoRealm();
+		if (customProperties.isCreateAdminUser()) {
+			tryCreateMasterRealmAdminUser();
+		}
+		if (customProperties.isCreateRealm()) {
+			importLssoRealm();
+		}
 	}
 
 	protected void loadConfig() {

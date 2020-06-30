@@ -25,3 +25,5 @@ keycloak:
       username: admin
       password: admin
     importLocation: lsso-realm.json
+    createAdminUser: false
+    createRealm: false
