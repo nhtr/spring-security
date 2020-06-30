@@ -9,7 +9,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ResourceSecurityConfig extends WebSecurityConfigurerAdapter {
-
+	
+//	@Value("${spring.security.oauth2.resourceserver.jwt.jwk-set-uri}")
+//    private String jwkSetUri;
+	
     @Override
     protected void configure(HttpSecurity http) throws Exception {// @formatter:off
         http.authorizeRequests()
@@ -25,5 +28,14 @@ public class ResourceSecurityConfig extends WebSecurityConfigurerAdapter {
               .oauth2ResourceServer()
                 .jwt();
     }//@formatter:on
+    
+    // TODO: Trust multiple algorithms for signature verifications with java code
+//    @Bean
+//    JwtDecoder jwtDecoder() {
+//        return NimbusJwtDecoder.withJwkSetUri(this.jwkSetUri)
+//            .jwsAlgorithm(SignatureAlgorithm.RS512)
+//            .jwsAlgorithm(SignatureAlgorithm.RS256)
+//            .build();
+//    }
 
 }

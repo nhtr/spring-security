@@ -9,6 +9,7 @@ spring:
         jwt:
           issuer-uri: http://localhost:8095/auth/realms/lsso
           jwk-set-uri: http://localhost:8095/auth/realms/lsso/protocol/openid-connect/certs
+          jws-algorithm: RS256
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/SpringLssoResource
