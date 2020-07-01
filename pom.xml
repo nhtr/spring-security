@@ -14,5 +14,6 @@
 		<module>lsso-authorization-server</module>
 		<module>lsso-resource-server</module>
 		<module>lsso-client</module>
+		<module>jira-client</module>
 	</modules>
 </project>

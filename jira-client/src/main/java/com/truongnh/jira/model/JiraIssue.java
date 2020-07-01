@@ -1,14 +1,14 @@
-package model;
+package com.truongnh.jira.model;
 
-public class IssueResult {
+public class JiraIssue {
 	private String id;
 	private String key;
 	private String summary;
 	
-	public IssueResult() {
+	public JiraIssue() {
 		super();
 	}
-	public IssueResult(String id, String key, String summary) {
+	public JiraIssue(String id, String key, String summary) {
 		super();
 		this.id = id;
 		this.key = key;

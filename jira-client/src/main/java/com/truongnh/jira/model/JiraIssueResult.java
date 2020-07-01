@@ -1,12 +1,12 @@
-package model;
+package com.truongnh.jira.model;
 
 import java.util.List;
 
-public class SearchIssueResult {
+public class JiraIssueResult {
 	private int startIndex;
 	private int maxResults;
 	private int total;
-	private List<IssueResult> listIssue;
+	private List<JiraIssue> listIssue;
 	public int getStartIndex() {
 		return startIndex;
 	}
@@ -25,10 +25,10 @@ public class SearchIssueResult {
 	public void setTotal(int total) {
 		this.total = total;
 	}
-	public List<IssueResult> getListIssue() {
+	public List<JiraIssue> getListIssue() {
 		return listIssue;
 	}
-	public void setListIssue(List<IssueResult> listIssue) {
+	public void setListIssue(List<JiraIssue> listIssue) {
 		this.listIssue = listIssue;
 	}
 	

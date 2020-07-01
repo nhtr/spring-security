@@ -1,11 +1,11 @@
-package config;
+package com.truongnh.jira.model;
 
 import java.net.URI;
 
 import com.atlassian.jira.rest.client.api.JiraRestClient;
 import com.atlassian.jira.rest.client.internal.async.AsynchronousJiraRestClientFactory;
 
-public class MyJiraClient {
+public class JiraClientConnect {
 	private String username;
 	private String password;
 	private String jiraUrl;
@@ -43,7 +43,7 @@ public class MyJiraClient {
 		this.restClient = restClient;
 	}
 
-	public MyJiraClient(String username, String password, String jiraUrl) {
+	public JiraClientConnect(String username, String password, String jiraUrl) {
 	    this.username = username;
 	    this.password = password;
 	    this.jiraUrl = jiraUrl;

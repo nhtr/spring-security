@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import data.IssueGrab;
-import model.SearchIssueResult;
+import com.truongnh.jira.model.JiraIssueResult;
+import com.truongnh.jira.service.IssueService;
 
 @RestController
 @RequestMapping(value = "/api/jira")
@@ -16,15 +16,15 @@ public class JiraController {
 	
 	@GetMapping(value = "/{id}")
     public String findOne(@PathVariable String id) {
-        IssueGrab issue = new IssueGrab();
+        IssueService issue = new IssueService();
         return issue.getIssue("REETOKEN-7").getDescription();
     }
 	
 	@GetMapping(value = "/search/{jql}")
-    public ResponseEntity<SearchIssueResult> searchData(@PathVariable String jql) {
-		IssueGrab issue = new IssueGrab();
+    public ResponseEntity<JiraIssueResult> searchData(@PathVariable String jql) {
+		IssueService issue = new IssueService();
         try {
-        	SearchIssueResult data = issue.searchIssue(jql);
+        	JiraIssueResult data = issue.searchIssue(jql);
 			return ResponseEntity.status(HttpStatus.OK)
 			        .body(data);
 		} catch (Exception e) {
