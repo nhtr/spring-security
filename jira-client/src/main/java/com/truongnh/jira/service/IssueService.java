@@ -14,8 +14,8 @@ public class IssueService {
 	private JiraRestClient restClient;
 	
 	public IssueService() {
-		// JiraClientConnect jiraClient = new JiraClientConnect("truongnh3.os", "123456", "https://jira.tpb.vn/");
-		JiraClientConnect jiraClient = new JiraClientConnect("truongnh.itvn", "truong00", "https://lasadu.vn/jira");
+		JiraClientConnect jiraClient = new JiraClientConnect("truongnh3.os", "123456", "https://jira.tpb.vn/");
+		// JiraClientConnect jiraClient = new JiraClientConnect("truongnh.itvn", "truong00", "https://lasadu.vn/jira");
 		this.restClient = jiraClient.getRestClient();
 	}
 	public Issue getIssue(String issueKey) {
